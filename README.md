@@ -21,7 +21,6 @@ Aşağıdaki tablo proje verisetine ait genel bilgileri özetlemektedir:
 | **Çeşitlilik** | Farklı açılar, ışık koşulları, arka planlar |
 | **Kullanım** | Eğitim – Doğrulama – Test |
 
-📁 **Klasör Yapısı**
 
 
 ---
