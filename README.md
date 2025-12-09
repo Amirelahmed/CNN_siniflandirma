@@ -164,7 +164,7 @@ CNN_siniflandirma/
 │   ├── tas/
 │   └── mermer/
 │
-├── assets/                # Grafik görselleri buraya gelecek
+├── images/                # Grafik görselleri buraya gelecek
 │   ├── model1_acc.png
 │   ├── model1_loss.png
 │   ├── model2_acc.png
