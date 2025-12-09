@@ -159,17 +159,24 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 ```markdown
 # 📁 7. Dosya Yapısı
 
-```text
 CNN_siniflandirma/
 ├── dataset/
 │   ├── tas/
 │   └── mermer/
 │
+├── assets/                # Grafik görselleri buraya gelecek
+│   ├── model1_acc.png
+│   ├── model1_loss.png
+│   ├── model2_acc.png
+│   ├── model2_loss.png
+│   ├── model3_acc.png
+│   └── model3_loss.png
+│
 ├── Model1.ipynb
 ├── Model2.ipynb
 ├── Model3.ipynb
 └── README.md
-```
+
 ---
 # 👤 Hazırlayan
 **Amir Elahmed**  
