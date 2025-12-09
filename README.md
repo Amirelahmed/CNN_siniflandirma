@@ -1,147 +1,143 @@
-# 📌 CNN Sınıflandırma Projesi
+# 🧠 CNN Tabanlı Görüntü Sınıflandırma (Taş – Mermer)
 
-Bu proje, Makine Öğrenmesi dersi kapsamında **kendi çektiğim görüntüler** ile saat ve fare nesnelerini sınıflandırmak amacıyla geliştirilmiştir.  
-Proje üç farklı modelden oluşmaktadır:  
-- **Model1:** Transfer Learning (VGG16)  
-- **Model2:** Temel CNN  
-- **Model3:** Hiperparametre Optimizasyonu + Veri Artırımı  
+Bu proje, BLG407 Makine Öğrenmesi dersi kapsamında **kendi çektiğim görüntüler** kullanılarak geliştirilmiş bir ikili sınıflandırma sistemidir.  
+Amaç, taş ve mermer nesnelerini ayırt edebilen bir CNN modeli oluşturmaktır.
+
+Proje üç aşamadan oluşmaktadır:
+
+- **Model1 → Transfer Learning (VGG16)**
+- **Model2 → Temel CNN**
+- **Model3 → Geliştirilmiş CNN + Hiperparametre Optimizasyonu + Veri Artırımı**
 
 ---
 
-# 🗂️ 1. Veri Seti
-
-Aşağıdaki tablo proje verisetine ait genel bilgileri özetlemektedir:
+# 📂 1. Veri Seti Bilgileri
 
 | Özellik | Açıklama |
 |--------|----------|
-| **Veri Kaynağı** | Tamamen telefon kamerası ile tarafımdan çekildi |
-| **Sınıf Sayısı** | 2 (Saat – Fare) |
-| **Görüntü Adedi** | Her sınıf için ≥ 50 görsel |
-| **Görüntü Boyutu** | 128×128 piksele yeniden boyutlandırıldı |
-| **Çeşitlilik** | Farklı açılar, ışık koşulları, arka planlar |
-| **Kullanım** | Eğitim – Doğrulama – Test |
-
-
-
----
-
-# ⚙️ 2. Model1 (Transfer Learning – VGG16)
-
-Transfer learning kullanılarak VGG16 ağırlıkları üzerine ince ayar yapılmıştır.
-
-### 📊 Model1 Özeti
-
-| Özellik | Değer |
-|--------|-------|
-| Kullanılan Mimari | VGG16 (ImageNet ağırlıklı) |
-| Öğrenme Yöntemi | Fine-Tuning |
-| Epoch | 6 |
-| Aktivasyon | ReLU + Softmax |
-| Optimizasyon | Adam |
-| Kullanılan Kütüphane | Keras |
-
-### 🔍 Model1 Sonuçları
-
-| Metrik | Sonuç |
-|-------|--------|
-| **Eğitim Doğruluğu** | %60–68 |
-| **Doğrulama Doğruluğu** | %90 |
-| **Test Doğruluğu** | %90 |
-| **Gözlem** | Aşırı öğrenme yok, güçlü genel performans |
+| **Sınıflar** | Taş – Mermer |
+| **Veri Kaynağı** | Tümü telefon kamerasıyla tarafımdan çekildi |
+| **Her sınıf için görsel sayısı** | ≥ 50 |
+| **Toplam veri** | ≥ 100 görüntü |
+| **Görüntü Boyutu** | 128×128 piksel |
+| **Çeşitlilik** | Farklı açı, ışık, arka plan |
+| **Klasör Yapısı** | dataset/taş, dataset/mermer |
 
 ---
 
-# 🧱 3. Model2 (Temel CNN Mimarisi)
+# ⚙️ 2. Model1 – Transfer Learning (VGG16)
 
-Bu model, CIFAR-10 tarzı basit bir CNN yapısıdır.
+Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst katmanları çıkarılarak kendi veri setime göre ince ayar (fine-tuning) yapılmıştır.
 
-### 📊 Model2 Yapısı
-
-| Katman | Açıklama |
-|--------|----------|
-| Conv2D | 32 ve 64 filtre |
-| MaxPooling | 2×2 |
-| Flatten | — |
-| Dense | 128 nöron |
-| Çıkış | Softmax |
-
-### 🔍 Model2 Sonuçları
-
-| Metrik | Sonuç |
-|-------|--------|
-| **Test Doğruluğu** | Orta seviye |
-| **Gözlem** | Basit mimari → düşük genel performans |
-
----
-
-# 🚀 4. Model3 (Geliştirilmiş CNN + Augmentation)
-
-Bu aşamada Model2 geliştirilmiş, hiperparametre optimizasyonu uygulanmış ve veri artırımı eklenmiştir.
-
-### ⚙️ Model3 Hiperparametreleri
+### 📌 Model1 Özellikleri
 
 | Parametre | Değer |
 |-----------|--------|
-| Filtre Sayısı | 32 → 64 → 128 |
-| Batch Size | 16 |
-| Dropout | 0.4 |
-| Epoch | 20 |
+| Mimari | VGG16 (ImageNet ağırlıklı) |
+| Eğitim Yöntemi | Fine-Tuning |
+| Epoch | 10 |
+| Aktivasyon | ReLU + Softmax |
+| Optimizasyon | Adam |
+| Kütüphane | Keras |
+
+### 📊 Model1 Sonuçları
+
+| Metrik | Değer |
+|-------|--------|
+| **Eğitim Doğruluğu** | ~%75–79 |
+| **Doğrulama Doğruluğu** | **%83.33** |
+| **Test Doğruluğu** | **%83.33** |
+| **Gözlem** | Transfer learning iyi başlangıç sağladı ancak veri seti küçük olduğu için tam genelleşemedi. |
+
+---
+
+# 🧱 3. Model2 – Temel CNN Mimarisi
+
+Bu model sıfırdan oluşturulmuş basit bir CNN mimarisidir.
+
+### 📌 Model2 Yapısı
+
+| Katman | Detay |
+|--------|--------|
+| Conv2D | 32, 64 filtre |
+| MaxPooling | 2×2 |
+| Flatten | — |
+| Dense | 128 nöron |
+| Çıkış | 2 sınıf – Softmax |
+
+### 📊 Model2 Sonuçları
+
+| Metrik | Değer |
+|-------|--------|
+| **Test Doğruluğu** | **%96.67** |
+| **Doğrulama Başarısı** | Yüksek ve stabil |
+| **Gözlem** | Küçük veri setinde temel CNN beklenenden yüksek performans gösterdi. |
+
+---
+
+# 🚀 4. Model3 – Geliştirilmiş CNN + Veri Artırımı
+
+Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş, veri artırımı eklenmiş ve hiperparametreler optimize edilmiştir.
+
+### 📌 Model3 Hiperparametreleri
+
+| Parametre | Değer |
+|-----------|--------|
+| Filtre Sayısı | 64 → 128 → 256 → 256 |
+| Batch Size | 8 |
+| Dropout | 0.3 (ek olarak 0.2 + 0.1 kombinasyon denendi) |
+| Epoch | 15 |
 | Öğrenme Oranı | 0.0005 |
 | Veri Artırımı | rotation=15°, shift=0.1, flip=True |
 
-### 🔍 Model3 Sonuçları
+### 📊 Model3 Sonuçları
 
-| Metrik | Sonuç |
+| Metrik | Değer |
 |-------|--------|
 | **Test Doğruluğu** | **%100** |
-| **Gözlem** | En iyi performans → Derinlik + Augmentation etkili |
+| **Test Kaybı** | 0.01 |
+| **Gözlem** | En yüksek performans: Veri artırımı + derin mimari etkisi belirgin. |
 
 ---
 
-# 📊 5. Deney Karşılaştırma Tablosu
+# 📈 5. Deney Karşılaştırma Tablosu
 
-Aşağıdaki tablo Model2 ve Model3 arasında yapılan deneyleri özetlemektedir:
-
-| Deney No | Batch Size | Filtre Sayısı | Dropout | Epoch | Veri Artırımı | Test Accuracy | Notlar |
-|---------|-------------|----------------|----------|--------|----------------|----------------|--------|
-| **1** | 32 | 32-64-128 | 0.5 | 15 | Hayır | %93.33 | Temel CNN (Model2) |
-| **2** | 16 | 32-64-128 (Derin mimari) | 0.4 | 20 | Evet | **%100** | İyileştirilmiş CNN + Augmentation (Model3) |
+| Deney | Batch Size | Filtre Sayısı | Dropout | Epoch | Veri Artırımı | Test Accuracy | Not |
+|------|-------------|----------------|----------|-------|----------------|----------------|-----|
+| **1** | 32 | 32-64-128 | 0.5 | 15 | Hayır | **%96.67** | Model2 – Temel CNN |
+| **2** | 8 | 64-128-256-256 | 0.2 + 0.1 | 15 | Evet | **%100** | Model3 – Geliştirilmiş CNN |
 
 ---
 
-# 🧾 6. Sonuç ve Değerlendirme
+# 🧾 6. Genel Değerlendirme
 
-| Model | Sonuç | Açıklama |
-|-------|--------|-----------|
-| **Model1 (VGG16)** | %90 | Transfer learning → güçlü başlangıç |
-| **Model2 (Temel CNN)** | Orta seviye | Sığ mimari → düşük başarı |
-| **Model3 (Geliştirilmiş CNN)** | **%100** | Hiperparametre + veri artırımı → en iyi performans |
+| Model | Performans | Açıklama |
+|-------|------------|-----------|
+| **Model1 (VGG16)** | %83.33 | Transfer learning başlangıç için güçlü fakat aşırı uyum göze çarpıyor. |
+| **Model2 (Temel CNN)** | %96.67 | Basit mimari olmasına rağmen veri setine iyi uyum sağladı. |
+| **Model3 (Geliştirilmiş CNN)** | **%100** | Daha derin yapı + augmentation → En iyi sonuç |
 
-**Genel Sonuç →** Model3 en başarılı modeldir.
-
----
-
-# 📁 7. Proje Dosyaları
-dataset/
-saat/
-fare/
-
-| Dosya | Açıklama |
-|-------|----------|
-| **Model1.ipynb** | Transfer Learning modeli |
-| **Model2.ipynb** | Temel CNN modeli |
-| **Model3.ipynb** | Geliştirilmiş CNN modeli |
-| **dataset/** | Saat & Fare görüntüleri |
-| **README.md** | Proje dökümantasyonu |
+➡ **Sonuç: Model3 açık ara en başarılı modeldir.**
 
 ---
 
-# 👤 Hazırlayan  
-**Ad Soyad:** Amir Elahmed  
-**Ders:** BLG407 – Makine Öğrenmesi  
-**Proje:** CNN Görüntü Sınıflandırma Sistemi  
+# 📁 7. Dosya Yapısı
+CNN_siniflandirma/
+│
+├── dataset/
+│ ├── tas/
+│ └── mermer/
+│
+├── Model1.ipynb
+├── Model2.ipynb
+├── Model3.ipynb
+├── README.md
+
 
 ---
 
-
+# 👤 Hazırlayan
+**Amir Elahmed**  
+BLG407 – Makine Öğrenmesi  
+CNN Görüntü Sınıflandırma Projesi
 
