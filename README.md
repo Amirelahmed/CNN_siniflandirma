@@ -66,8 +66,12 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 | **Doğrulama Doğruluğu** | **%83.33** |
 | **Test Doğruluğu** | **%83.33** |
 
-**Gözlem:**  
-Transfer learning iyi bir başlangıç sağlamış olsa da, veri setinin sınırlı boyutu nedeniyle tam genelleme sağlanamamıştır.
+### Model1 Eğitim Grafikleri
+
+# Accuracy Grafiği:
+
+
+# Loss Grafiği:
 
 ---
 
