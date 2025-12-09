@@ -69,9 +69,9 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 ### Model1 Eğitim Grafikleri
 
 # Accuracy Grafiği:
-
-
+![Model1 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Accuracy.png?raw=true)  
 # Loss Grafiği:
+![Model1 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Loss.png?raw=true)  
 
 ---
 
