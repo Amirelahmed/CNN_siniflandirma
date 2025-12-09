@@ -1,9 +1,9 @@
 # 🧠 CNN Tabanlı Görüntü Sınıflandırma (Taş – Mermer)
 
-Bu proje, BLG407 Makine Öğrenmesi dersi kapsamında **kendi çektiğim görüntüler** kullanılarak geliştirilmiş bir ikili sınıflandırma sistemidir.  
-Amaç, taş ve mermer nesnelerini ayırt edebilen bir CNN modeli oluşturmaktır.
+Bu proje, BLG407 Makine Öğrenmesi dersi kapsamında **kendi çektiğim görüntüler** kullanılarak geliştirilmiş bir görüntü sınıflandırma sistemidir.  
+Amaç, iki sınıfı — **Taş** ve **Mermer** — yüksek doğrulukla ayırt edebilen bir CNN modeli oluşturmaktır.
 
-Proje üç aşamadan oluşmaktadır:
+Proje üç temel modelden oluşmaktadır:
 
 - **Model1 → Transfer Learning (VGG16)**
 - **Model2 → Temel CNN**
@@ -11,17 +11,32 @@ Proje üç aşamadan oluşmaktadır:
 
 ---
 
-# 📂 1. Veri Seti Bilgileri
+# 🗂️ 1. Veri Seti
+
+Bu projede kullanılan veri seti tamamen tarafımdan **telefon kamerası ile çekilmiş 150 özgün görüntüden** oluşmaktadır.  
+Veri seti iki sınıfa ayrılmıştır ve her sınıf için **75 adet görüntü** bulunmaktadır.
+
+Aşağıdaki tablo veri setine ait genel bilgileri özetlemektedir:
 
 | Özellik | Açıklama |
 |--------|----------|
-| **Sınıflar** | Taş – Mermer |
-| **Veri Kaynağı** | Tümü telefon kamerasıyla tarafımdan çekildi |
-| **Her sınıf için görsel sayısı** | ≥ 50 |
-| **Toplam veri** | ≥ 100 görüntü |
-| **Görüntü Boyutu** | 128×128 piksel |
-| **Çeşitlilik** | Farklı açı, ışık, arka plan |
-| **Klasör Yapısı** | dataset/taş, dataset/mermer |
+| **Toplam Görüntü Sayısı** | **150 adet** |
+| **Taş Görselleri** | 75 görüntü |
+| **Mermer Görselleri** | 75 görüntü |
+| **Veri Kaynağı** | Tamamı telefon kamerası ile çekilmiştir |
+| **Sınıf Sayısı** | 2 (Taş – Mermer) |
+| **Görüntü Boyutu** | 128×128 piksele yeniden boyutlandırıldı |
+| **Çeşitlilik** | Farklı açı, ışık ve arka plan çeşitliliği sağlandı |
+| **Kullanım Şekli** | Eğitim – Doğrulama – Test olarak otomatik ayrıldı |
+
+### 📁 Klasör Yapısı
+dataset/
+│── tas/ # 75 görüntü
+│── mermer/ # 75 görüntü
+
+
+**Not:**  
+Tüm görüntüler özgün olup internetten alınmamıştır. Farklı açılar ve ışık koşulları kullanılarak çeşitlilik artırılmıştır.
 
 ---
 
@@ -47,37 +62,40 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 | **Eğitim Doğruluğu** | ~%75–79 |
 | **Doğrulama Doğruluğu** | **%83.33** |
 | **Test Doğruluğu** | **%83.33** |
-| **Gözlem** | Transfer learning iyi başlangıç sağladı ancak veri seti küçük olduğu için tam genelleşemedi. |
+
+**Gözlem:**  
+Transfer learning iyi bir başlangıç sağlamış olsa da, veri setinin sınırlı boyutu nedeniyle tam genelleme sağlanamamıştır.
 
 ---
 
 # 🧱 3. Model2 – Temel CNN Mimarisi
 
-Bu model sıfırdan oluşturulmuş basit bir CNN mimarisidir.
+Bu model sıfırdan oluşturulmuş basit bir CNN yapısını temsil eder.
 
 ### 📌 Model2 Yapısı
 
-| Katman | Detay |
-|--------|--------|
-| Conv2D | 32, 64 filtre |
+| Katman | Açıklama |
+|--------|----------|
+| Conv2D | 32 ve 64 filtre |
 | MaxPooling | 2×2 |
 | Flatten | — |
 | Dense | 128 nöron |
-| Çıkış | 2 sınıf – Softmax |
+| Çıkış | Softmax |
 
 ### 📊 Model2 Sonuçları
 
 | Metrik | Değer |
 |-------|--------|
 | **Test Doğruluğu** | **%96.67** |
-| **Doğrulama Başarısı** | Yüksek ve stabil |
-| **Gözlem** | Küçük veri setinde temel CNN beklenenden yüksek performans gösterdi. |
+
+**Gözlem:**  
+Temel CNN mimarisi, veri seti küçük olsa bile yüksek başarı göstermiştir.
 
 ---
 
 # 🚀 4. Model3 – Geliştirilmiş CNN + Veri Artırımı
 
-Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş, veri artırımı eklenmiş ve hiperparametreler optimize edilmiştir.
+Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri artırımı ile genelleme kabiliyeti güçlendirilmiştir.
 
 ### 📌 Model3 Hiperparametreleri
 
@@ -88,7 +106,7 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş, veri art�
 | Dropout | 0.3 (ek olarak 0.2 + 0.1 kombinasyon denendi) |
 | Epoch | 15 |
 | Öğrenme Oranı | 0.0005 |
-| Veri Artırımı | rotation=15°, shift=0.1, flip=True |
+| Veri Artırımı | rotation=15°, width/height shift=0.1, horizontal flip=True |
 
 ### 📊 Model3 Sonuçları
 
@@ -96,14 +114,16 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş, veri art�
 |-------|--------|
 | **Test Doğruluğu** | **%100** |
 | **Test Kaybı** | 0.01 |
-| **Gözlem** | En yüksek performans: Veri artırımı + derin mimari etkisi belirgin. |
+
+**Gözlem:**  
+Daha derin mimari + veri artırımı ile model maksimum performansa ulaşmıştır.
 
 ---
 
 # 📈 5. Deney Karşılaştırma Tablosu
 
 | Deney | Batch Size | Filtre Sayısı | Dropout | Epoch | Veri Artırımı | Test Accuracy | Not |
-|------|-------------|----------------|----------|-------|----------------|----------------|-----|
+|------|-------------|----------------|----------|--------|----------------|----------------|------|
 | **1** | 32 | 32-64-128 | 0.5 | 15 | Hayır | **%96.67** | Model2 – Temel CNN |
 | **2** | 8 | 64-128-256-256 | 0.2 + 0.1 | 15 | Evet | **%100** | Model3 – Geliştirilmiş CNN |
 
@@ -111,13 +131,13 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş, veri art�
 
 # 🧾 6. Genel Değerlendirme
 
-| Model | Performans | Açıklama |
-|-------|------------|-----------|
-| **Model1 (VGG16)** | %83.33 | Transfer learning başlangıç için güçlü fakat aşırı uyum göze çarpıyor. |
-| **Model2 (Temel CNN)** | %96.67 | Basit mimari olmasına rağmen veri setine iyi uyum sağladı. |
-| **Model3 (Geliştirilmiş CNN)** | **%100** | Daha derin yapı + augmentation → En iyi sonuç |
+| Model | Sonuç | Açıklama |
+|-------|--------|-----------|
+| **Model1 (VGG16)** | %83.33 | Transfer learning başlangıç için güçlü fakat veri az olduğu için tam verim alınamadı. |
+| **Model2 (Temel CNN)** | %96.67 | Basit mimari olmasına rağmen başarılı sonuç verdi. |
+| **Model3 (Geliştirilmiş CNN)** | **%100** | Veri artırımı + derin mimari → En iyi sonuç. |
 
-➡ **Sonuç: Model3 açık ara en başarılı modeldir.**
+➡ **Sonuç: Model3 en başarılı modeldir.**
 
 ---
 
@@ -133,11 +153,11 @@ CNN_siniflandirma/
 ├── Model3.ipynb
 ├── README.md
 
-
 ---
-
 # 👤 Hazırlayan
 **Amir Elahmed**  
 BLG407 – Makine Öğrenmesi  
 CNN Görüntü Sınıflandırma Projesi
+
+
 
