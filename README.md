@@ -35,7 +35,7 @@ Aşağıdaki tablo veri setine ait genel bilgileri özetlemektedir:
 dataset/
 ├── tas/        # 75 görüntü
 └── mermer/     # 75 görüntü
-
+```
 
 
 **Not:**  
