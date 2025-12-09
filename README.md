@@ -157,7 +157,7 @@ CNN_siniflandirma/
 ├── Model2.ipynb
 ├── Model3.ipynb
 └── README.md
-
+```
 ---
 # 👤 Hazırlayan
 **Amir Elahmed**  
