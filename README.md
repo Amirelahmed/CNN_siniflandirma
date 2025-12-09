@@ -156,9 +156,9 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 
 ---
 
-```markdown
-# 📁 7. Dosya Yapısı
 
+# 📁 7. Dosya Yapısı
+```markdown
 CNN_siniflandirma/
 ├── dataset/
 │   ├── tas/
