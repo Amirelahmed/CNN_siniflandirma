@@ -66,7 +66,7 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 | **Doğrulama Doğruluğu** | **%83.33** |
 | **Test Doğruluğu** | **%83.33** |
 
-### Model1 Eğitim Grafikleri
+### 📈 Model1 Eğitim Grafikleri
 
 # Accuracy Grafiği:
 ![Model1 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Accuracy.png?raw=true)  
@@ -95,8 +95,12 @@ Bu model sıfırdan oluşturulmuş basit bir CNN yapısını temsil eder.
 |-------|--------|
 | **Test Doğruluğu** | **%96.67** |
 
-**Gözlem:**  
-Temel CNN mimarisi, veri seti küçük olsa bile yüksek başarı göstermiştir.
+### 📈 Model2 Eğitim Grafikleri
+
+# Accuracy Grafiği:
+![Model2 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Accuracy.png?raw=true)  
+# Loss Grafiği:
+![Model2 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Loss.png?raw=true)    
 
 ---
 
@@ -122,8 +126,12 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 | **Test Doğruluğu** | **%100** |
 | **Test Kaybı** | 0.01 |
 
-**Gözlem:**  
-Daha derin mimari + veri artırımı ile model maksimum performansa ulaşmıştır.
+### 📈 Model3 Eğitim Grafikleri
+
+# Accuracy Grafiği:
+![Model3 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model3/Accuracy.png?raw=true) 
+# Loss Grafiği:
+![Model3 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model3/Loss.png?raw=true)  
 
 ---
 
