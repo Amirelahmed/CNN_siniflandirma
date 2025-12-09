@@ -30,9 +30,12 @@ Aşağıdaki tablo veri setine ait genel bilgileri özetlemektedir:
 | **Kullanım Şekli** | Eğitim – Doğrulama – Test olarak otomatik ayrıldı |
 
 ### 📁 Klasör Yapısı
+
+```text
 dataset/
-│── tas/ # 75 görüntü
-│── mermer/ # 75 görüntü
+├── tas/        # 75 görüntü
+└── mermer/     # 75 görüntü
+
 
 
 **Not:**  
@@ -141,17 +144,19 @@ Daha derin mimari + veri artırımı ile model maksimum performansa ulaşmışt�
 
 ---
 
+```markdown
 # 📁 7. Dosya Yapısı
+
+```text
 CNN_siniflandirma/
-│
 ├── dataset/
-│ ├── tas/
-│ └── mermer/
+│   ├── tas/
+│   └── mermer/
 │
 ├── Model1.ipynb
 ├── Model2.ipynb
 ├── Model3.ipynb
-├── README.md
+└── README.md
 
 ---
 # 👤 Hazırlayan
