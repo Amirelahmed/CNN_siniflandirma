@@ -31,7 +31,7 @@ Aşağıdaki tablo veri setine ait genel bilgileri özetlemektedir:
 
 ### 📁 Klasör Yapısı
 
-```text
+```markdown
 dataset/
 ├── tas/        # 75 görüntü
 └── mermer/     # 75 görüntü
