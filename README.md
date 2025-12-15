@@ -128,7 +128,10 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 
 
 ### 📈 Model3 Eğitim Grafikleri
-
+<p align="center">
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png" width="45%" />
+</p>
 # Accuracy Grafiği:
 ![Model3 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png) 
 
@@ -152,7 +155,8 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 |-------|--------|-----------|
 | **Model1 (VGG16)** | %83.33 | Transfer learning başlangıç için güçlü fakat veri az olduğu için tam verim alınamadı. |
 | **Model2 (Temel CNN)** | %96.67 | Basit mimari olmasına rağmen başarılı sonuç verdi. |
-| **Model3 (Geliştirilmiş CNN)** | **%100** | Veri artırımı + derin mimari → En iyi sonuç. |
+| **Model3 (Geliştirilmiş CNN)** | %90.00 | Veri artırımı sayesinde daha iyi genelleme kabiliyeti sağlanmıştır. |
+
 
 ➡ **Sonuç:**  
 Model2 daha yüksek doğruluk elde etmiş olsa da, Model3 veri artırımı ve hiperparametre değişiklikleri sayesinde daha iyi genelleme kabiliyeti göstermiştir. Bu nedenle Model3, gerçek hayattaki yeni veriler için daha dayanıklı bir model olarak değerlendirilmektedir.
