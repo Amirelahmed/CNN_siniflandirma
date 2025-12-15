@@ -68,11 +68,10 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 
 ### 📈 Model1 Eğitim Grafikleri
 
-# Accuracy Grafiği:
-![Model1 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Accuracy.png?raw=true)  
-# Loss Grafiği:
-![Model1 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Loss.png?raw=true)  
-
+<p align="center">
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Accuracy.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Loss.png" width="45%" />
+</p>
 ---
 
 # 🧱 3. Model2 – Temel CNN Mimarisi
@@ -97,11 +96,11 @@ Bu model sıfırdan oluşturulmuş basit bir CNN yapısını temsil eder.
 
 ### 📈 Model2 Eğitim Grafikleri
 
-# Accuracy Grafiği:
-![Model2 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Accuracy.png?raw=true)  
-# Loss Grafiği:
-![Model2 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Loss.png?raw=true)    
-
+### 📈 Model2 Eğitim Grafikleri
+<p align="center">
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Accuracy.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Loss.png" width="45%" />
+</p>
 ---
 
 # 🚀 4. Model3 – Geliştirilmiş CNN + Veri Artırımı
@@ -132,12 +131,6 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
   <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png" width="45%" />
   <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png" width="45%" />
 </p>
-# Accuracy Grafiği:
-![Model3 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png) 
-
-# Loss Grafiği:
-![Model3 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png)  
-
 ---
 
 # 📈 5. Deney Karşılaştırma Tablosu
