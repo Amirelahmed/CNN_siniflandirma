@@ -105,26 +105,30 @@ Bu model sıfırdan oluşturulmuş basit bir CNN yapısını temsil eder.
 
 # 🚀 4. Model3 – Geliştirilmiş CNN + Veri Artırımı
 
-Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri artırımı ile genelleme kabiliyeti güçlendirilmiştir.
+Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve
+veri artırımı ile genelleme kabiliyeti güçlendirilmiştir.
+
 
 ### 📌 Model3 Hiperparametreleri
 
 | Parametre | Değer |
 |-----------|--------|
 | Filtre Sayısı | 32 → 64 → 128 |
-| Batch Size | 16 |
+| Batch Size | **32** |
 | Dropout | 0.3 |
-| Epoch | 20 |
-| Optimizasyon | Adam |
-| Veri Artırımı | rotation=15°, width/height shift=0.1, horizontal flip=True |
+| Epoch | **20 (en iyi epoch: 19)** |
+| Optimizasyon | Adam (LR = 0.0005) |
+| Veri Artırımı | rotation=10°, width/height shift=0.05, zoom=0.1, horizontal flip=True |
 
 
 ### 📊 Model3 Sonuçları
 | Metrik | Değer |
 |-------|--------|
-| **Test Doğruluğu** | **%90.00** |
-| **Test Kaybı** | 0.88 |
-
+| **Test Doğruluğu** | **%100.00** |
+| **Test Kaybı** | **~0.07** |
+Model3’te yapılan hiperparametre optimizasyonları ve veri artırımı
+sayesinde model performansı belirgin şekilde artmıştır.
+En iyi doğrulama sonucu **Epoch 19**’da elde edilmiştir.
 
 ### 📈 Model3 Eğitim Grafikleri
 <p align="center">
@@ -136,9 +140,10 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 # 📈 5. Deney Karşılaştırma Tablosu
 
 | Deney | Batch Size | Filtre Sayısı | Dropout | Epoch | Veri Artırımı | Test Accuracy | Not |
-|------|-------------|----------------|----------|--------|----------------|----------------|------|
-| **1** | 32 | 32-64-128 | 0.5 | 15 | Hayır | **%96.67** | Model2 – Temel CNN |
-| **2** | 16 | 32-64-128 | 0.3 | 20 | Evet | **%90.00** | Model3 – CNN + Veri Artırımı |
+|------|------------|---------------|---------|-------|---------------|---------------|-----|
+| 1 | 32 | 32-64-128 | 0.5 | 15 | Hayır | %96.67 | Model2 – Temel CNN |
+| 2 | 16 | 32-64-128 | 0.3 | 20 | Evet (Yoğun) | %90.00 | Model3 – İlk Deneme |
+| 3 | 32 | 32-64-128 | 0.3 | 20 | Evet (Optimize) | **%100.00** | Model3 – Optimize Edilmiş |
 
 ---
 
@@ -146,13 +151,16 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 
 | Model | Sonuç | Açıklama |
 |-------|--------|-----------|
-| **Model1 (VGG16)** | %83.33 | Transfer learning başlangıç için güçlü fakat veri az olduğu için tam verim alınamadı. |
-| **Model2 (Temel CNN)** | %96.67 | Basit mimari olmasına rağmen başarılı sonuç verdi. |
-| **Model3 (Geliştirilmiş CNN)** | %90.00 | Veri artırımı sayesinde daha iyi genelleme kabiliyeti sağlanmıştır. |
+| Model1 (VGG16) | %83.33 | Transfer learning küçük veri setinde sınırlı avantaj sağlamıştır. |
+| Model2 (Temel CNN) | %96.67 | Basit mimari ile yüksek performans elde edilmiştir. |
+| Model3 (Geliştirilmiş CNN) | **%100.00** | Hiperparametre optimizasyonu ve veri artırımı sayesinde en iyi performans elde edilmiştir. |
+
 
 
 ➡ **Sonuç:**  
-Model2 daha yüksek doğruluk elde etmiş olsa da, Model3 veri artırımı ve hiperparametre değişiklikleri sayesinde daha iyi genelleme kabiliyeti göstermiştir. Bu nedenle Model3, gerçek hayattaki yeni veriler için daha dayanıklı bir model olarak değerlendirilmektedir.
+Model3, yapılan hiperparametre optimizasyonları ve veri artırımı
+sayesinde Model2’ye kıyasla daha yüksek doğruluk elde etmiştir.
+Bu nedenle Model3, nihai ve en başarılı model olarak seçilmiştir.
 
 ---
 
