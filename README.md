@@ -129,7 +129,7 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 ### 📈 Model3 Eğitim Grafikleri
 <p align="center">
   <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png" width="45%" />
-  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png" width="42%" />
 </p>
 ---
 
