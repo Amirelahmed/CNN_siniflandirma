@@ -130,9 +130,10 @@ Bu aşamada Model2 geliştirilmiş, model daha derin hale getirilmiş ve veri ar
 ### 📈 Model3 Eğitim Grafikleri
 
 # Accuracy Grafiği:
-![Model3 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model3/Accuracy.png?raw=true) 
+![Model3 Accuracy](https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Accuracy.png) 
+
 # Loss Grafiği:
-![Model3 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model3/Loss.png?raw=true)  
+![Model3 Loss](https://github.com/Amirelahmed/CNN_siniflandirma/blob/9e95284db0eef04fe70812d60974008294adc94e/images/Model3/Loss.png)  
 
 ---
 
