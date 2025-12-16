@@ -69,8 +69,8 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 ### 📈 Model1 Eğitim Grafikleri
 
 <p align="center">
-  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Accuracy.png" width="45%" />
-  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model1/Loss.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/ece667919051ef4706dd502ec34278b7e6497ba9/images/Model1/Accuracy.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/ece667919051ef4706dd502ec34278b7e6497ba9/images/Model1/Loss.png" width="45%" />
 </p>
 ---
 
