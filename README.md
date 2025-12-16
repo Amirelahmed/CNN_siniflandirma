@@ -62,9 +62,9 @@ Bu aşamada ImageNet üzerinde eğitilmiş **VGG16** modeli kullanılmış, üst
 
 | Metrik | Değer |
 |-------|--------|
-| **Eğitim Doğruluğu** | ~%75–79 |
-| **Doğrulama Doğruluğu** | **%83.33** |
-| **Test Doğruluğu** | **%83.33** |
+| **Eğitim Doğruluğu** | ~%65–70 |
+| **Doğrulama Doğruluğu** | **%90.00** |
+| **Test Doğruluğu** | **%90.00** |
 
 ### 📈 Model1 Eğitim Grafikleri
 
@@ -151,7 +151,7 @@ En iyi doğrulama sonucu **Epoch 19**’da elde edilmiştir.
 
 | Model | Sonuç | Açıklama |
 |-------|--------|-----------|
-| Model1 (VGG16) | %83.33 | Transfer learning küçük veri setinde sınırlı avantaj sağlamıştır. |
+| Model1 (VGG16) | %90.00 | Transfer learning küçük veri setinde dengeli ve kabul edilebilir bir performans sağlamıştır. |
 | Model2 (Temel CNN) | %96.67 | Basit mimari ile yüksek performans elde edilmiştir. |
 | Model3 (Geliştirilmiş CNN) | **%100.00** | Hiperparametre optimizasyonu ve veri artırımı sayesinde en iyi performans elde edilmiştir. |
 
