@@ -132,8 +132,8 @@ En iyi doğrulama sonucu **Epoch 19**’da elde edilmiştir.
 
 ### 📈 Model3 Eğitim Grafikleri
 <p align="center">
-  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/f3b4c786203a8269fb75810d8bb02c749cc844fe/images/Model3/Accuracy.png" width="45%" />
-  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/f3b4c786203a8269fb75810d8bb02c749cc844fe/images/Model3/Loss.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/dbd89f8b54827f117885d6a3375d6de8ba9a1e0e/images/Model3/Accuracy.png" width="45%" />
+  <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/dbd89f8b54827f117885d6a3375d6de8ba9a1e0e/images/Model3/Loss.png" width="45%" />
 </p>
 ---
 
