@@ -116,7 +116,7 @@ veri artırımı ile genelleme kabiliyeti güçlendirilmiştir.
 | Filtre Sayısı | 32 → 64 → 128 |
 | Batch Size | **32** |
 | Dropout | 0.3 |
-| Epoch | **20 (en iyi epoch: 19)** |
+| Epoch | **20 (en iyi epoch: 18)** |
 | Optimizasyon | Adam (LR = 0.0005) |
 | Veri Artırımı | rotation=10°, width/height shift=0.05, zoom=0.1, horizontal flip=True |
 
@@ -139,11 +139,11 @@ En iyi doğrulama sonucu **Epoch 19**’da elde edilmiştir.
 
 # 📈 5. Deney Karşılaştırma Tablosu
 
-| Deney | Batch Size | Filtre Sayısı | Dropout | Epoch | Veri Artırımı | Test Accuracy | Not |
-|------|------------|---------------|---------|-------|---------------|---------------|-----|
-| 1 | 32 | 32-64-128 | 0.5 | 15 | Hayır | %96.67 | Model2 – Temel CNN |
-| 2 | 16 | 32-64-128 | 0.3 | 20 | Evet (Yoğun) | %90.00 | Model3 – İlk Deneme |
-| 3 | 32 | 32-64-128 | 0.3 | 20 | Evet (Optimize) | **%100.00** | Model3 – Optimize Edilmiş |
+| Deney | Batch Size | Filtre Sayısı | Learning Rate | Dropout | Epoch | Veri Artırımı | Callback | Test Accuracy | Not |
+|------|------------|---------------|---------------|---------|-------|---------------|----------|---------------|-----|
+| 1 | 32 | 32-64-128 | 0.001 | 0.5 | 15 | Hayır | Yok | %96.67 | Model2 – Temel CNN |
+| 2 | 16 | 32-64-128 | 0.001 | 0.3 | 20 | Evet (Yoğun) | Yok | %90.00 | Model3 – İlk Deneme |
+| 3 | 32 | 32-64-128 | 0.0005 | 0.3 | 20 | Evet (Optimize) | EarlyStopping + ReduceLR | **%100.00** | Model3 – Optimize Edilmiş |
 
 ---
 
