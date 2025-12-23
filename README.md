@@ -96,7 +96,6 @@ Bu model sıfırdan oluşturulmuş basit bir CNN yapısını temsil eder.
 
 ### 📈 Model2 Eğitim Grafikleri
 
-### 📈 Model2 Eğitim Grafikleri
 <p align="center">
   <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Accuracy.png" width="45%" />
   <img src="https://github.com/Amirelahmed/CNN_siniflandirma/blob/903f43a3a41e07bfe062bc887f37fec820c3c06e/images/Model2/Loss.png" width="43%" />
